@@ -99,7 +99,8 @@
         </ul>
       </div>
     </div>
-    <p style="margin-top:40px"><a class="btn" href="#contact-joe">Book Joe to Speak</a></p>
+    <p style="margin-top:34px;color:#b6bbc3;max-width:720px"><strong style="color:#e9ecee">Recent talks &amp; workshops also explore:</strong> the agentic organization — building teams of humans + AI agents · DeLead &amp; decentralized leadership · Return on Energy · surviving the seasons of entrepreneurship.</p>
+    <p style="margin-top:28px"><a class="btn" href="#contact-joe">Book Joe to Speak</a></p>
   </div>
 </section>
 
@@ -134,6 +135,7 @@
         <h4 style="color:var(--heading)">How it works:</h4>
         <ul>
           <li>1:1 coaching engagements for founders &amp; CEOs</li>
+          <li>EOS-style operating discipline — vision, structure &amp; accountability</li>
           <li>Grounded in the frameworks below — FROST, DeLead &amp; Return on Energy</li>
           <li>Backed by 25 years of building decentralized companies</li>
           <li>Start with a conversation — no pitch, just recognition</li>
@@ -224,12 +226,11 @@
     <div class="kicker" style="text-align:center">A Decentralized Life</div>
     <h2 class="display" style="text-align:center;font-size:clamp(28px,4vw,42px)">Twenty-Five Years of Proving It</h2>
     <p style="max-width:740px;margin:18px auto 0;text-align:center">Before the world had names for it, Joseph was building decentralized companies: <strong style="color:var(--heading)">HomeSmartz</strong>, a mortgage brokerage that thrived on distributed trust. <strong style="color:var(--heading)"><a href="https://frostmediagroup.com/">Frost Media Group</a></strong>, where two decades of film crews — specialists assembled for the project, trusted with their craft, dissolved at the wrap — revealed the original decentralized workforce. Then <strong style="color:var(--heading)">yorCMO</strong>, the <strong style="color:var(--heading)">FPA</strong> &amp; <strong style="color:var(--heading)">Guided Outsourcing</strong> — and now, agentic AI. The thesis wasn't invented. It was lived.</p>
-    <!-- TODO: confirm real values with Joseph -->
     <div class="counter-grid">
       <div class="counter"><div class="num" data-count="25">0</div><div class="label">Years as an Entrepreneur</div></div>
-      <div class="counter"><div class="num" data-count="5">0</div><div class="label">Companies built &amp; scaled</div></div>
-      <div class="counter"><div class="num" data-count="1">0</div><div class="label">Book authored</div></div>
-      <div class="counter"><div class="num" data-count="50" data-suffix="+">0</div><div class="label">Talks given on 3+ continents</div></div>
+      <div class="counter"><div class="num" data-count="5" data-suffix="x">0</div><div class="label">Founder — companies built &amp; scaled</div></div>
+      <div class="counter"><div class="num" data-count="1">0</div><div class="label">Book authored — New Media Habits</div></div>
+      <div class="counter"><div class="num" data-count="3" data-suffix="+">0</div><div class="label">Continents spoken on</div></div>
     </div>
   </div>
 </section>
@@ -281,10 +282,10 @@
 <!-- LINKEDIN LIVE -->
 <section class="logos">
   <div class="wrap" style="text-align:center;max-width:820px">
-    <div class="kicker">Live with Joe</div>
-    <h2 class="display" style="font-size:clamp(28px,4vw,42px);margin-bottom:18px">Weekly on LinkedIn Live</h2>
-    <!-- TODO: Joseph to confirm day/time + series name; each week's Live becomes a blog recap post -->
-    <p style="max-width:640px;margin:0 auto 26px">Every week, Joe goes live on LinkedIn — unpacking the future of work in real time: fractional leadership, decentralized teams &amp; what agentic AI means for how we build companies. Follow along to catch the next one, or browse past sessions on the blog.</p>
+    <div class="kicker">Live &amp; Unfiltered</div>
+    <h2 class="display" style="font-size:clamp(28px,4vw,42px);margin-bottom:18px">Cup of Joe — Weekly on LinkedIn Live</h2>
+    <!-- TODO: confirm day/time once finalized -->
+    <p style="max-width:660px;margin:0 auto 26px">Every week, Joe and co-host Robert Mendelson go live to take real questions from fractional leaders and founders — referrals, pipeline math, scope creep, staying strategic instead of becoming a vendor, and what agentic AI means for how we build companies. No scripts, just a cup of Joe.</p>
     <a class="btn" href="https://www.linkedin.com/in/josephfrost/">Follow Joe on LinkedIn</a>&nbsp;&nbsp;
     <a class="btn ghost" style="color:var(--gold-deep);border-color:var(--gold-deep)" href="blog/">Past Sessions &amp; Recaps</a>
   </div>
@@ -322,10 +323,21 @@
     <div class="kicker">Book Joe to Speak</div>
     <h2>Book Joe to Speak at Your Next Event</h2>
     <div class="contact-grid">
-      <div class="placeholder-form">
-        <strong>Booking form coming soon</strong>
-        [PLACEHOLDER — form &amp; scheduling embed to be added: Name, Email, Subject (Speaking / Coaching / Other), Message]
-      </div>
+      <!-- Interim form: opens a pre-filled email to joe@. Swap action for HubSpot/Formspree endpoint when chosen. -->
+      <form id="contact-form" style="background:var(--ink-soft);border:1px solid var(--line-dark);border-radius:var(--radius);padding:30px">
+        <label style="display:block;margin-bottom:14px"><span style="font-size:13px;color:#8c929c">Name</span><br>
+          <input id="cf-name" required style="width:100%;padding:11px;border-radius:4px;border:1px solid var(--line-dark);background:#12151c;color:#e9ecee"></label>
+        <label style="display:block;margin-bottom:14px"><span style="font-size:13px;color:#8c929c">I'm interested in</span><br>
+          <select id="cf-subject" style="width:100%;padding:11px;border-radius:4px;border:1px solid var(--line-dark);background:#12151c;color:#e9ecee">
+            <option>Booking Joe to speak</option>
+            <option>Coaching with Joe</option>
+            <option>Something else</option>
+          </select></label>
+        <label style="display:block;margin-bottom:18px"><span style="font-size:13px;color:#8c929c">Message</span><br>
+          <textarea id="cf-msg" rows="4" required style="width:100%;padding:11px;border-radius:4px;border:1px solid var(--line-dark);background:#12151c;color:#e9ecee"></textarea></label>
+        <button type="submit" class="btn" style="border:0;cursor:pointer">Send Message</button>
+        <p style="font-size:12.5px;color:#8c929c;margin-top:12px">Opens your email app with the message pre-filled — sends directly to Joe.</p>
+      </form>
       <div class="direct">
         <p>Prefer to reach out directly?</p>
         <p>📧 <a href="mailto:joe@josephmarkfrost.com">joe@josephmarkfrost.com</a></p>
@@ -384,6 +396,15 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: .6 });
 document.querySelectorAll('.num').forEach(el => io.observe(el));
+
+// Interim contact form → pre-filled email to Joe
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('cf-name').value;
+  const subj = document.getElementById('cf-subject').value;
+  const msg = document.getElementById('cf-msg').value;
+  location.href = 'mailto:joe@josephmarkfrost.com?subject=' + encodeURIComponent(subj + ' — ' + name) + '&body=' + encodeURIComponent(msg + '\n\n— ' + name);
+});
 </script>
 </body>
 </html>
