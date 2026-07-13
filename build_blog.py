@@ -52,6 +52,68 @@ def post_page(title, date, cats, body_html, desc):
     return SHELL.format(title=html.escape(title), desc=html.escape(desc), body=body)
 
 POSTS = [
+ dict(slug="cup-of-joe-monetizing-scope-creep",
+  title="Cup of Joe Recap: Stop Fearing Scope Creep — Say “Yes, And”",
+  date="July 13, 2026", cats="Cup of Joe, Fractional Practice",
+  desc="From this week's Cup of Joe LinkedIn Live: how fractionals turn scope creep from a threat into a monetization opportunity — plus the 7 A-referral-partner math.",
+  img="https://josephmarkfrost.com/wp-content/uploads/2021/02/JoeFrost.jpeg",
+  excerpt="This week on Cup of Joe, Robert and I finished the lead-sources conversation and dug into the second distraction: worrying about scope creep instead of monetizing it...",
+  body="""<p><em>Every week, my co-host Robert Mendelson and I go live on LinkedIn for <strong>Cup of Joe</strong> — real questions from real fractionals, no scripts. This week's session is brought to you by <a href="https://yorcmo.ai">yorCMO.ai</a>. Here's what we covered.</em></p>
+<h3>First, the leftover question: what do you do with a bad referral from Uncle Bob?</h3>
+<p>You told the family you're looking for referrals. Uncle Bob connects you with Charlie. Thirty seconds into the call you know it's a bad fit. Now what?</p>
+<p>Handle it like any other bad referral: run your process, point Charlie in a better direction, and don't overthink it. The only question that matters is whether Bob is ever going to be an A or B referral partner. If he is, go back and educate him — “thanks for that referral; here's what my ideal client actually looks like.” If he isn't, don't bother. Friends and family are rarely your A-partners; they're the wide net that bumps into an opportunity for you once in a while. Stay diplomatic and appreciate the give, even when it's a rotten one.</p>
+<h3>The math: seven A-partners runs your whole pipeline</h3>
+<p>Over the last eight years at yorCMO we've closed about <strong>one out of every seven qualified opportunities</strong>. So if you want four new clients a year, you need 28 qualified opportunities. Where do 28 qualified referrals come from? <strong>Seven A-referral partners, each sending you one qualified lead per quarter.</strong></p>
+<p>An A-partner is someone who's in front of your target audience regularly, has ongoing opportunities to refer you, and actually sends one qualified referral a quarter. It's not a big ask — but you may have to go through a couple hundred coffees to find your seven. That's the game. Seven relationships handle your entire business development; the rest is scaling delivery.</p>
+<h3>The second distraction: worrying about scope creep instead of monetizing it</h3>
+<p>Every fractional knows the feeling — the slow expansion of tasks that leaves you overworked and undervalued. The standard advice is “just say no and defend the scope.” I think that's the distraction.</p>
+<p>Every scope-creep request is a <strong>real need</strong>. The client wouldn't ask otherwise. So the answer isn't “no, but” — it's <strong>“yes, and”</strong>:</p>
+<ul>
+<li><strong>Yes, and</strong> I can bring in another fractional from my network to handle it.</li>
+<li><strong>Yes, and</strong> we can add budget this quarter to make room for it.</li>
+<li><strong>Yes, and</strong> I have a vendor partner who's excellent at this — let me get you a proposal.</li>
+<li><strong>Yes, and</strong> what should we remove from this quarter's sprint to prioritize it?</li>
+</ul>
+<p>Each of those paths monetizes the request — new budget, a referral fee, or the reciprocal value of putting an opportunity in a partner's lap.</p>
+<h3>The vendor trap</h3>
+<p>Here's the line I want every fractional to remember: <strong>as soon as you start doing vendor work, you become a vendor again — not a strategic partner.</strong></p>
+<p>Even when the ask is a 15-minute task you could knock out yourself, the answer is “yes, I'll get it done” — through your coordinator, your bench, or your vendor partner. A strategic leader doesn't say “I don't do that” (off-putting, and untrue). A strategic leader says “I'll get it done.” Do it once as a favor and route it visibly through your network; if it keeps coming up, that's a budget conversation the client is now primed to say yes to.</p>
+<h3>On referral fees: fiduciary means transparent, not broke</h3>
+<p>Some fractionals refuse referral fees outright on fiduciary grounds. That's legitimate. But being a fiduciary can also mean taking the fee <em>and being transparent about it</em>: it doesn't change the client's price, and you disclose that some vendor partners have a referral relationship with you. In my experience, clients who trust you don't care — as long as the vendor is good and the price is honest. Find partners who don't jack up the price to fund the fee, and disclosure stops being awkward.</p>
+<h3>Put it in the agreement</h3>
+<p>Every yorCMO agreement says it up front: out-of-scope requests will happen every quarter, and here's how we handle them — defer, swap, or add budget. Companies that focus on fewer things get better outcomes; that's the whole rocks-and-pebbles conversation. Set it at the onset and the quarterly scope conversation becomes comfortable instead of confrontational.</p>
+<p><em>Next week on Cup of Joe: Distraction #3 — selling industry-agnostic vs. specializing. Or as Robert put it: how to get over “I'm good at everything” syndrome. <a href="https://www.linkedin.com/in/josephfrost/">Follow me on LinkedIn</a> to catch it live, and if you want the full system behind the five distractions, that's the <a href="https://frost-framework.com">FROST Framework</a>.</em></p>"""),
+
+ dict(slug="chasing-leads-vs-building-lead-sources",
+  title="The First Distraction: Chasing Leads vs. Building Lead Sources",
+  date="July 13, 2026", cats="FROST Framework, Fractional Practice",
+  desc="Most fractional consultants spend 80% of their energy chasing individual leads when they should be building lead sources. Part 1 of the Five Distractions series.",
+  img="assets/frost-infographic-1.png",
+  excerpt="Most fractionals spend 80% of their energy chasing individual leads when they should be building lead sources — repeatable systems that send clients to you...",
+  body="""<p><em>This is Part 1 of the <strong>Five Distractions</strong> series — the five places fractional consultants pour energy that quietly keep them from building a real firm. It's drawn from the <a href="https://frost-framework.com">FROST Framework</a>, the system I teach for building a million-dollar fractional practice.</em></p>
+<h3>The problem with chasing leads</h3>
+<p>Most fractional consultants spend 80% of their energy chasing individual leads when they should be building <strong>lead sources</strong>.</p>
+<p>The difference sounds subtle. It isn't. A lead is one opportunity — you win it or lose it, and either way you start over at zero tomorrow. A lead source is a <strong>repeatable system that sends clients to you</strong> without constant outbound effort. Chasing leads is a treadmill. Building lead sources is an asset.</p>
+<h3>The three types of lead sources</h3>
+<p><strong>1. Other fractionals (the best).</strong> Your peers get asked for things outside their scope constantly — and they refer those opportunities to someone. A network of fractionals who know exactly what you do and trust you with their clients is a business-changing asset.</p>
+<p><strong>2. Business groups (good).</strong> Strategic partnerships with complementary service providers, SaaS tools, and agencies who serve your audience and see your kind of opportunity before you do.</p>
+<p><strong>3. Your personal network (the baseline).</strong> People who already trust you and refer when they can. Valuable — but rarely your engine, because they only occasionally bump into your ideal client.</p>
+<h3>The 7 A-referral-partners formula</h3>
+<p>Here's the math I use with our own CMOs, built on eight years of pipeline data:</p>
+<ul>
+<li>One A-partner sends you <strong>one qualified lead per quarter</strong> — 4 per year</li>
+<li><strong>7 partners × 1 referral/quarter = 28 qualified leads per year</strong></li>
+<li>At a 1-in-7 close rate, that's <strong>4 closed deals a year</strong></li>
+</ul>
+<p>For most fractional practices, four good engagements a year <em>is</em> the business. Which means seven solid relationships handle your entire business development — and everything else is scaling delivery. You may need a couple hundred coffees to find your seven. Worth every cup.</p>
+<h3>Do this now</h3>
+<ul>
+<li><strong>Map your current lead sources.</strong> Where did your last 10 clients actually come from? Which ones took the most work?</li>
+<li><strong>Find your gaps.</strong> Are you living on outbound? Do you have a single true referral partnership?</li>
+<li><strong>Target your first 3 A-partners.</strong> Who would refer you most naturally? Start those conversations this week.</li>
+</ul>
+<p><em>The full lesson — including the Lead Source Mapper tool that does the mapping with you — is inside the <a href="https://frost-framework.com">FROST Framework course</a>. Next in the series: <a href="cup-of-joe-monetizing-scope-creep.html">Distraction #2 — worrying about scope creep instead of monetizing it</a>.</em></p>"""),
+
  dict(slug="why-i-started-the-largest-community-of-fractional-professionals",
   title="Why I Started the Largest Community of Fractional Professionals (and Why You Should Join)",
   date="April 9, 2023", cats="Business, Collective, Strategy",
