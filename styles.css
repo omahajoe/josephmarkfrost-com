@@ -1,0 +1,208 @@
+/* josephmarkfrost.com — static rebuild
+   Brand system extracted from the original WordPress site:
+   mint-white #f3f6f3 · deep burgundy #421e22 headings · teal #58a6a6 accent
+   dark navy #1b1f29 sections · Inter headings · Montserrat body */
+
+:root {
+  --ink: #1b1f29;          /* dark navy sections */
+  --ink-soft: #242936;     /* cards on dark */
+  --paper: #f3f6f3;        /* mint-white */
+  --paper-dim: #e8eeea;
+  --text: #4f5655;         /* gray-green body */
+  --text-dim: #7c8482;
+  --heading: #421e22;      /* deep burgundy */
+  --gold: #58a6a6;         /* teal accent (name kept for template compat) */
+  --gold-deep: #3d8a8a;    /* deeper teal for links on light */
+  --line: #d7ded9;
+  --line-dark: #2c3242;
+  --max: 1080px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Montserrat", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16.5px;
+}
+h1, h2, h3, h4, .display { font-family: "Inter", sans-serif; line-height: 1.2; color: var(--heading); font-weight: 600; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--gold-deep); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.kicker {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 14px;
+  font-family: "Inter", sans-serif;
+}
+.dark .kicker, .dark h2, .dark h3.sub { }
+section { padding: 84px 0; }
+
+/* ---------- Nav ---------- */
+header.site {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(27,31,41,.94); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line-dark);
+}
+header.site .wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
+.logo { font-family: "Inter", sans-serif; font-weight: 700; color: #fff; text-decoration: none; font-size: 20px; letter-spacing: .04em; }
+.logo span { color: var(--gold); }
+nav.main { display: flex; gap: 22px; margin-left: auto; }
+nav.main a { color: #ccd2d4; text-decoration: none; font-size: 14px; }
+nav.main a:hover { color: var(--gold); }
+.btn {
+  display: inline-block; background: var(--gold); color: #fff;
+  font-family: "Inter", sans-serif; font-weight: 600;
+  padding: 13px 28px; border-radius: 4px; text-decoration: none;
+  font-size: 14.5px; letter-spacing: .04em; text-transform: uppercase;
+  transition: transform .15s ease, background .15s ease;
+}
+.btn:hover { background: #4a9494; transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+header.site .btn { padding: 9px 20px; font-size: 13px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  /* TODO before cutover: pull Home-Title-BG_02.jpg into the repo */
+  background: linear-gradient(rgba(20, 23, 31, .66), rgba(20, 23, 31, .78)),
+              url("https://josephmarkfrost.com/wp-content/uploads/2022/03/Home-Title-BG_02.jpg") center/cover no-repeat;
+  color: var(--paper); padding: 140px 0 120px;
+}
+.hero .kicker { color: #fff; }
+.hero h1 { font-size: clamp(42px, 6.5vw, 76px); color: #fff; margin-bottom: 24px; font-weight: 600; }
+.hero p.lede { font-size: 19px; color: #d5d9dc; max-width: 640px; margin-bottom: 36px; }
+
+/* ---------- Stats (light, like the original) ---------- */
+.stats { background: #fff; padding: 72px 0; border-bottom: 1px solid var(--line); }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 34px; margin-top: 40px; }
+.stat h3 { color: var(--gold-deep); font-size: 18px; margin-bottom: 8px; }
+.stat p { color: var(--text); font-size: 15px; }
+
+/* ---------- Video ---------- */
+.video-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 26px 54px rgba(27,31,41,.22); background: #000; }
+video { width: 100%; display: block; }
+
+/* ---------- Keynote (light, like the original) ---------- */
+.keynote { background: var(--paper); }
+.keynote h2 { font-size: clamp(30px, 4.5vw, 46px); }
+.keynote h3.sub { color: var(--gold-deep); font-size: 20px; margin: 14px 0 26px; }
+.keynote p { color: var(--text); margin-bottom: 18px; max-width: 720px; }
+.keynote strong, .keynote em { color: var(--heading); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 56px; }
+.card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 32px;
+}
+.card h4 { color: var(--heading); font-size: 17px; margin-bottom: 18px; }
+.card ul { list-style: none; }
+.card li { padding: 9px 0 9px 30px; position: relative; color: var(--text); font-size: 15px; border-bottom: 1px solid var(--line); }
+.card li:last-child { border-bottom: 0; }
+.card li::before { content: "→"; position: absolute; left: 2px; color: var(--gold); }
+
+/* ---------- Logos ---------- */
+.logos { padding: 56px 0; background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.logo-row { display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center; justify-content: center; margin-top: 28px; }
+.logo-row img { max-height: 52px; width: auto; filter: grayscale(1); opacity: .75; transition: .2s; }
+.logo-row img:hover { filter: none; opacity: 1; }
+
+/* ---------- About ---------- */
+.about-grid { display: grid; grid-template-columns: 360px 1fr; gap: 56px; align-items: start; }
+.about-grid img { border-radius: var(--radius); }
+.about h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 8px; }
+.about h3 { font-size: 19px; color: var(--gold-deep); margin: 14px 0 20px; font-weight: 600; }
+.about p { margin-bottom: 16px; }
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.tags span { border: 1px solid var(--line); border-radius: 4px; padding: 6px 16px; font-size: 13px; color: var(--text-dim); background: #fff; }
+
+/* ---------- Counters (light, like the original) ---------- */
+.counters { background: #fff; padding: 72px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.counter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 34px; text-align: center; margin-top: 44px; }
+.counter .num { font-family: "Inter", sans-serif; font-size: 54px; font-weight: 700; color: var(--gold-deep); }
+.counter .label { color: var(--text-dim); font-size: 14.5px; margin-top: 6px; }
+
+/* ---------- Photo band (the one dark section, like the original "Leading Thinker") ---------- */
+.photo-band {
+  /* TODO before cutover: pull Joe-Frost-3-scaled.jpg into the repo */
+  background: linear-gradient(rgba(20, 23, 31, .74), rgba(20, 23, 31, .82)),
+              url("https://josephmarkfrost.com/wp-content/uploads/2024/04/Joe-Frost-3-scaled.jpg") center/cover no-repeat;
+  color: #d5d9dc;
+}
+.photo-band .kicker { color: var(--gold); }
+.photo-band h2 { color: #fff; }
+.photo-band p, .photo-band strong { color: #d5d9dc; }
+.photo-band a:not(.btn) { color: var(--gold); }
+
+/* ---------- Testimonials ---------- */
+.testimonials { background: var(--paper-dim); }
+.quote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin-top: 44px; }
+.quote {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px; font-size: 15px;
+}
+.quote p { font-style: italic; color: var(--text); }
+.quote .who { margin-top: 18px; font-style: normal; font-family: "Inter", sans-serif; font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--heading); font-weight: 600; }
+
+/* ---------- Podcast ---------- */
+.podcast-grid { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: center; }
+.podcast-grid img { border-radius: var(--radius); box-shadow: 0 20px 40px rgba(27,31,41,.16); }
+
+/* ---------- Blog ---------- */
+.post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 44px; }
+.post-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: var(--text);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.post-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(27,31,41,.12); }
+.post-card img { aspect-ratio: 16/10; object-fit: cover; }
+.post-card .pad { padding: 24px; }
+.post-card h3 { font-size: 17px; margin-bottom: 10px; }
+.post-card p { font-size: 14px; color: var(--text-dim); }
+.post-card .more { margin-top: auto; padding: 0 24px 22px; color: var(--gold-deep); font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: .06em; font-family: "Inter", sans-serif; }
+
+/* ---------- Contact ---------- */
+.contact { background: var(--ink); color: var(--paper); }
+.contact .kicker { color: var(--gold); }
+.contact h2 { color: #fff; font-size: clamp(30px, 4.5vw, 44px); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 40px; align-items: start; }
+.placeholder-form {
+  border: 2px dashed var(--line-dark); border-radius: var(--radius);
+  padding: 44px 32px; text-align: center; color: #8c929c; background: var(--ink-soft);
+}
+.placeholder-form strong { color: var(--gold); display: block; margin-bottom: 8px; font-family: "Inter", sans-serif; }
+.contact .direct p { color: #b6bbc3; margin-bottom: 14px; }
+.contact .direct a { color: var(--gold); }
+
+/* ---------- Footer ---------- */
+footer.site { background: #14171f; color: #8c929c; padding: 56px 0 40px; font-size: 14px; }
+footer.site .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 44px; }
+footer.site h4 { color: #d3d7db; font-size: 15px; margin-bottom: 14px; }
+footer.site a { color: #a9aeb6; text-decoration: none; }
+footer.site a:hover { color: var(--gold); }
+footer.site ul { list-style: none; }
+footer.site li { margin-bottom: 8px; }
+.copyright { border-top: 1px solid var(--line-dark); margin-top: 44px; padding-top: 24px; text-align: center; font-size: 13px; }
+
+/* ---------- Blog post page ---------- */
+.post-hero { background: var(--ink); color: var(--paper); padding: 90px 0 70px; }
+.post-hero h1 { color: #fff; font-size: clamp(28px, 5vw, 48px); max-width: 860px; }
+.post-hero .kicker { color: var(--gold); }
+.post-hero .meta { color: #8c929c; margin-top: 18px; font-size: 14px; }
+.post-body { max-width: 760px; margin: 0 auto; padding: 72px 24px; }
+.post-body p { margin-bottom: 22px; }
+.post-body h2, .post-body h3 { margin: 40px 0 16px; }
+.post-body ul { margin: 0 0 22px 24px; }
+.post-body li { margin-bottom: 8px; }
+.post-body blockquote { border-left: 3px solid var(--gold); padding-left: 22px; color: var(--text-dim); font-style: italic; margin-bottom: 22px; }
+.post-body .bio { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 28px; font-size: 14.5px; color: var(--text-dim); font-style: italic; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 880px) {
+  nav.main { display: none; }
+  .two-col, .about-grid, .podcast-grid, .contact-grid, footer.site .cols { grid-template-columns: 1fr; }
+  .hero { padding: 96px 0 76px; }
+  section { padding: 60px 0; }
+}

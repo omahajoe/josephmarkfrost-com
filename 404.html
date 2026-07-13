@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting…</title>
+<script>
+  // Legacy URLs land here — send everyone to the homepage.
+  // Domain-aware: works at omahajoe.github.io/<repo>/ AND on a custom domain (root).
+  var base = location.hostname.endsWith('github.io')
+    ? '/' + location.pathname.split('/')[1] + '/'
+    : '/';
+  location.replace(base);
+</script>
+<meta http-equiv="refresh" content="0;url=/">
+</head>
+<body></body>
+</html>
