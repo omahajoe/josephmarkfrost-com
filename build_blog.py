@@ -14,8 +14,9 @@ SHELL = """<!DOCTYPE html>
 <meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
+{head_extra}
 </head>
 <body>
 <header class="site">
@@ -39,7 +40,25 @@ SHELL = """<!DOCTYPE html>
 </body>
 </html>"""
 
-def post_page(title, date, cats, body_html, desc):
+import json as _json
+def post_page(title, date, cats, body_html, desc, slug, img):
+    url = f"https://josephmarkfrost.com/blog/{slug}.html"
+    schema = _json.dumps({
+        "@context": "https://schema.org", "@type": "BlogPosting",
+        "headline": title, "description": desc, "url": url, "image": img,
+        "datePublished": date,
+        "author": {"@type": "Person", "name": "Joseph Mark Frost", "@id": "https://josephmarkfrost.com/#joseph"},
+        "publisher": {"@type": "Person", "name": "Joseph Mark Frost"}
+    })
+    head_extra = f"""<link rel="canonical" href="{url}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{url}">
+<meta property="og:site_name" content="Joseph Mark Frost">
+<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:image" content="{img if img.startswith('http') else 'https://josephmarkfrost.com/' + img.replace('../','')}">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{schema}</script>"""
     body = f"""<section class="post-hero">
   <div class="wrap">
     <h1>{title}</h1>
@@ -49,7 +68,7 @@ def post_page(title, date, cats, body_html, desc):
 <article class="post-body">
 {body_html}
 </article>"""
-    return SHELL.format(title=html.escape(title), desc=html.escape(desc), body=body)
+    return SHELL.format(title=html.escape(title), desc=html.escape(desc), body=body, head_extra=head_extra)
 
 POSTS = [
  dict(slug="cup-of-joe-monetizing-scope-creep",
@@ -314,7 +333,7 @@ os.makedirs(os.path.join(OUT, "blog"), exist_ok=True)
 
 # Post pages
 for p in POSTS:
-    page = post_page(p["title"], p["date"], p["cats"], p["body"] + BIO_4X if p["cats"] != "Podcast" else p["body"], p["desc"])
+    page = post_page(p["title"], p["date"], p["cats"], p["body"] + BIO_4X if p["cats"] != "Podcast" else p["body"], p["desc"], p["slug"], p["img"])
     with open(os.path.join(OUT, "blog", p["slug"] + ".html"), "w") as f:
         f.write(page)
 
@@ -341,6 +360,16 @@ index_body = f"""<section class="post-hero">
 </section>"""
 
 with open(os.path.join(OUT, "blog", "index.html"), "w") as f:
-    f.write(SHELL.format(title="Blog", desc="News, podcast episodes and insights by Joe Frost on fractional and decentralized leadership.", body=index_body))
+    f.write(SHELL.format(title="Blog", desc="News, podcast episodes and insights by Joe Frost on fractional and decentralized leadership.", body=index_body,
+        head_extra='<link rel="canonical" href="https://josephmarkfrost.com/blog/">'))
+
+# sitemap.xml
+pages = ["", "podcast.html", "blog/"] + [f"blog/{p['slug']}.html" for p in POSTS]
+sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+sm += "\n".join(f"  <url><loc>https://josephmarkfrost.com/{u}</loc></url>" for u in pages)
+sm += "\n</urlset>\n"
+with open(os.path.join(OUT, "sitemap.xml"), "w") as f:
+    f.write(sm)
+print("sitemap:", len(pages), "URLs")
 
 print("Built", len(POSTS), "posts + blog index")

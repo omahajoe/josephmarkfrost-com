@@ -4,12 +4,22 @@
 <meta charset="UTF-8">
 <title>Redirecting…</title>
 <script>
-  // Legacy URLs land here — send everyone to the homepage.
-  // Domain-aware: works at omahajoe.github.io/<repo>/ AND on a custom domain (root).
-  var base = location.hostname.endsWith('github.io')
-    ? '/' + location.pathname.split('/')[1] + '/'
-    : '/';
-  location.replace(base);
+  // Legacy WordPress URLs → new locations. Unknown paths → homepage.
+  // Domain-aware: works at omahajoe.github.io/<repo>/ AND on the custom domain (root).
+  var onGH = location.hostname.endsWith('github.io');
+  var base = onGH ? '/' + location.pathname.split('/')[1] + '/' : '/';
+  var path = onGH ? '/' + location.pathname.split('/').slice(2).join('/') : location.pathname;
+  path = path.replace(/\/+$/, '').toLowerCase();
+  var map = {
+    '/why-i-started-the-largest-community-of-fractional-professionals-and-why-you-should-join': 'blog/why-i-started-the-largest-community-of-fractional-professionals.html',
+    '/4-ways-to-leverage-podcasting-to-grow-your-business': 'blog/4-ways-to-leverage-podcasting-to-grow-your-business.html',
+    '/winter-is-coming-a-documentary-film-about-surviving-the-seasons-of-entrepreneurship': 'blog/winter-is-coming-documentary.html',
+    '/why-the-future-of-work-is-fractional': 'blog/why-the-future-of-work-is-fractional.html',
+    '/fractional-c-suite-retreat-decentralized-leadership-with-brian-smith-fractional': 'blog/episode-010-decentralized-leadership-with-dr-brian-smith.html',
+    '/fractional-c-suite-retreat-podcast-partnering-for-success-with-nelson-tepfer': 'blog/episode-009-partnering-for-success-with-nelson-tepfer.html',
+    '/blog': 'blog/'
+  };
+  location.replace(base + (map[path] || ''));
 </script>
 <meta http-equiv="refresh" content="0;url=/">
 </head>
