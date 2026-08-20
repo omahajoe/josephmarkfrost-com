@@ -21,7 +21,7 @@ SHELL = """<!DOCTYPE html>
 <body>
 <header class="site">
   <div class="wrap">
-    <a class="logo" href="../">JOE<span>FROST</span></a>
+    <a class="logo" href="../"><img src="https://josephmarkfrost.com/wp-content/uploads/2022/03/JF_Main-Logo_White-145x70.png" alt="Joseph Mark Frost" height="40"></a>
     <nav class="main">
       <a href="../">Home</a>
       <a href="./">Blog</a>
