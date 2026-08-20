@@ -70,13 +70,18 @@ header.site .btn { padding: 9px 20px; font-size: 13px; }
 /* ---------- Hero ---------- */
 .hero {
   /* TODO before cutover: pull Home-Title-BG_02.jpg into the repo */
-  background: linear-gradient(rgba(20, 23, 31, .66), rgba(20, 23, 31, .78)),
-              url("https://josephmarkfrost.com/wp-content/uploads/2022/03/Home-Title-BG_02.jpg") center/cover no-repeat;
-  color: var(--paper); padding: 140px 0 120px;
+  /* Side gradient: dark behind the text (left), fading clear on the right so Joe shows through. */
+  background: linear-gradient(100deg, rgba(20, 23, 31, .88) 0%, rgba(20, 23, 31, .70) 42%, rgba(20, 23, 31, .20) 70%, rgba(20, 23, 31, .05) 100%),
+              url("https://josephmarkfrost.com/wp-content/uploads/2022/03/Home-Title-BG_02.jpg") center right/cover no-repeat;
+  color: var(--paper); padding: 150px 0 130px;
 }
 .hero .kicker { color: #fff; }
-.hero h1 { font-size: clamp(42px, 6.5vw, 76px); color: #fff; margin-bottom: 24px; font-weight: 600; }
-.hero p.lede { font-size: 19px; color: #d5d9dc; max-width: 640px; margin-bottom: 36px; }
+.hero h1 { font-size: clamp(42px, 6.5vw, 76px); color: #fff; margin-bottom: 24px; font-weight: 600; text-shadow: 0 2px 20px rgba(0,0,0,.35); }
+.hero p.lede { font-size: 19px; color: #eef0f2; max-width: 540px; margin-bottom: 36px; text-shadow: 0 1px 14px rgba(0,0,0,.4); }
+@media (max-width: 700px) {
+  /* On narrow screens the photo can't share space with text — go back to a readable full overlay. */
+  .hero { background: linear-gradient(rgba(20,23,31,.72), rgba(20,23,31,.82)), url("https://josephmarkfrost.com/wp-content/uploads/2022/03/Home-Title-BG_02.jpg") center/cover no-repeat; }
+}
 
 /* ---------- Stats (light, like the original) ---------- */
 .stats { background: #fff; padding: 72px 0; border-bottom: 1px solid var(--line); }
