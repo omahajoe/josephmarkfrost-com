@@ -42,12 +42,14 @@ a { color: var(--gold-deep); }
 section { padding: 84px 0; }
 
 /* ---------- Nav ---------- */
+/* Transparent nav overlaid on the hero image (like the original). Pages without a
+   dark hero get the .header-solid modifier so the white logo stays legible. */
 header.site {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(27,31,41,.94); backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line-dark);
+  position: absolute; top: 0; left: 0; right: 0; z-index: 50;
+  background: transparent;
 }
-header.site .wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
+header.site.header-solid { position: sticky; background: var(--ink); }
+header.site .wrap { display: flex; align-items: center; gap: 28px; height: 74px; }
 .logo { font-family: "Inter", sans-serif; font-weight: 700; color: #fff; text-decoration: none; font-size: 20px; letter-spacing: .04em; display: flex; align-items: center; }
 .logo img { height: 40px; width: auto; display: block; }
 .logo span { color: var(--gold); }
@@ -164,21 +166,16 @@ video { width: 100%; display: block; }
 .post-card p { font-size: 14px; color: var(--text-dim); }
 .post-card .more { margin-top: auto; padding: 0 24px 22px; color: var(--gold-deep); font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: .06em; font-family: "Inter", sans-serif; }
 
-/* ---------- Contact ---------- */
-.contact { background: var(--ink); color: var(--paper); }
-.contact .kicker { color: var(--gold); }
-.contact h2 { color: #fff; font-size: clamp(30px, 4.5vw, 44px); }
+/* ---------- Contact (light, like the original) ---------- */
+.contact { background: var(--paper-dim); }
+.contact .kicker { color: var(--gold-deep); }
+.contact h2 { font-size: clamp(30px, 4.5vw, 44px); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 40px; align-items: start; }
-.placeholder-form {
-  border: 2px dashed var(--line-dark); border-radius: var(--radius);
-  padding: 44px 32px; text-align: center; color: #8c929c; background: var(--ink-soft);
-}
-.placeholder-form strong { color: var(--gold); display: block; margin-bottom: 8px; font-family: "Inter", sans-serif; }
-.contact .direct p { color: #b6bbc3; margin-bottom: 14px; }
-.contact .direct a { color: var(--gold); }
+.contact .direct p { color: var(--text); margin-bottom: 14px; }
+.contact .direct a { color: var(--gold-deep); }
 
 /* ---------- Footer ---------- */
-footer.site { background: #14171f; color: #8c929c; padding: 56px 0 40px; font-size: 14px; }
+footer.site { background: var(--ink); color: #8c929c; padding: 56px 0 40px; font-size: 14px; }
 footer.site .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 44px; }
 footer.site h4 { color: #d3d7db; font-size: 15px; margin-bottom: 14px; }
 footer.site a { color: #a9aeb6; text-decoration: none; }
